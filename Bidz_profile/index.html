@@ -21,6 +21,40 @@
 
   <body>
     <div id="root"></div>
+
+    <script>
+  // Chặn chuột phải (để ngăn kiểm tra phần tử)
+  document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+  // Chặn các phím tắt phổ biến
+  document.onkeydown = function(e) {
+    // Chặn F12
+    if (e.keyCode == 123) {
+      return false;
+    }
+    // Chặn Ctrl+U (Xem mã nguồn)
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+    }
+    // Chặn Ctrl+Shift+I (Mở DevTools)
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+    }
+    // Chặn Ctrl+Shift+C (Kiểm tra phần tử)
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+      return false;
+    }
+    // Chặn Ctrl+Shift+J (Mở Console)
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+    }
+    // Chặn Ctrl+S (Lưu trang)
+    if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+      return false;
+    }
+  };
+</script>
+
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v67327c56f0bb4ef8b305cae61679db8f1769101564043" integrity="sha512-rdcWY47ByXd76cbCFzznIcEaCN71jqkWBBqlwhF1SY7KubdLKZiEGeP7AyieKZlGP9hbY/MhGrwXzJC/HulNyg==" data-cf-beacon='{"version":"2024.11.0","token":"69f3645af33a4436b00e54735cf7418d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
